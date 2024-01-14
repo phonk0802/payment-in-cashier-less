@@ -1,0 +1,12 @@
+NAME,TIME,PRODUCT,TOTAL_PRICE
+phonk,06:33-57,"{'pen': 1, 'hao_hao': 3, 'fami': 2, 'cafe': 1, 'milo': 3, 'bottle': 1, 'omachi': 1, 'custas': 1, 'poca': 0}",138000
+phonk,06:37-49,"{'pen': 1, 'hao_hao': 3, 'fami': 2, 'cafe': 1, 'milo': 3, 'bottle': 1, 'omachi': 1, 'custas': 1, 'poca': 0}",138000
+phonk,06:40-39,"{'pen': 1, 'cafe': 1, 'bottle': 1, 'milo': 1, 'poca': 0, 'custas': 0, 'omachi': 0, 'fami': 0, 'hao_hao': 0}",84000
+phonk,10:00-23,"{'pen': 1, 'hao_hao': 3, 'fami': 2, 'cafe': 1, 'milo': 3, 'bottle': 1, 'omachi': 1, 'custas': 1, 'poca': 0}",138000
+phonk,10:02-30,"{'pen': 1, 'cafe': 1, 'fami': 2, 'bottle': 1, 'hao_hao': 2, 'milo': 2, 'omachi': 1, 'poca': 0, 'custas': 0}",115000
+phonk,10:06-10,"{'pen': 1, 'cafe': 1, 'fami': 2, 'bottle': 1, 'hao_hao': 2, 'milo': 2, 'omachi': 1, 'poca': 0, 'custas': 0}",115000
+phonk,10:07-54,"{'pen': 1, 'hao_hao': 3, 'fami': 2, 'cafe': 1, 'milo': 3, 'bottle': 1, 'omachi': 1, 'custas': 1, 'poca': 0}",138000
+phonk,10:09-55,"{'pen': 1, 'hao_hao': 3, 'fami': 2, 'cafe': 1, 'milo': 3, 'bottle': 1, 'omachi': 1, 'custas': 1, 'poca': 0}",138000
+minh,10:11-38,"{'pen': 1, 'hao_hao': 3, 'fami': 2, 'cafe': 1, 'milo': 3, 'bottle': 1, 'omachi': 1, 'custas': 1, 'poca': 0}",138000
+minh,10:12-46,"{'pen': 1, 'hao_hao': 3, 'fami': 2, 'cafe': 1, 'milo': 3, 'bottle': 1, 'omachi': 1, 'custas': 1, 'poca': 0}",138000
+phonk,10:29-53,"{'custas': 1, 'bottle': 1, 'cafe': 1, 'pen': 1, 'poca': 1, 'milo': 1, 'omachi': 0, 'fami': 0, 'hao_hao': 0}",106000

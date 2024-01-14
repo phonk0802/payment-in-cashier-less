@@ -11,9 +11,6 @@ from yolov7.detect_and_track import detect_id
 weights = 'test_886.pt'
 #device = select_device('cpu')
 #model = attempt_load(weights, map_location=device)  # load FP32 model
-# detect(model=model, device=device, source='real_test/img_test (2).jpg')
-real_test_dir = 'C:\\Users\\ASUS\\PycharmProjects\\cashier_less_project\\real_test'
-real_test_path = [os.path.join(real_test_dir, path) for path in os.listdir(real_test_dir)]
 
 nc = 9
 price_dict = dict(poca=10000, custas=12000, milo=8000, omachi=5000, fami=6000, cafe=10000, pen=6000, hao_hao=3000,
@@ -109,34 +106,5 @@ def get_shopping_list_from_source(source):
     with open('product_log.txt', 'w', encoding='utf8') as file:
         file.write(f'{class_result};{total_price_all_products}')
     return class_result, total_price_all_products
-
-#get_shopping_list_from_source('real_test/img_test (1).jpg')
-#print(a)
-
-
-duong_dan_video = 'runs/detect/track/vid_test (1).mp4'
-video_capture = cv2.VideoCapture(duong_dan_video)
-mau_duong_thang = (0, 255, 0)
-chieu_rong_video = int(video_capture.get(3))
-chieu_cao_video = int(video_capture.get(4))
-
-while True:
-    ret, frame = video_capture.read()
-
-    if not ret:
-        break
-    x_duong_thang_1 = int(0.25 * chieu_rong_video)
-    x_duong_thang_2 = int(0.4 * chieu_rong_video)
-
-    frame_ve_duong_thang = cv2.line(frame, (x_duong_thang_1, 0), (x_duong_thang_1, chieu_cao_video),
-    mau_duong_thang, thickness=2)
-
-    frame_ve_duong_thang = cv2.line(frame_ve_duong_thang, (x_duong_thang_2, 0), (x_duong_thang_2, chieu_cao_video),
-                                    mau_duong_thang, thickness=2)
-    cv2.imshow('Video voi Duong Thang', frame_ve_duong_thang)
-
-    if cv2.waitKey(1) & 0xFF == ord('q'):
-        break
-
-video_capture.release()
-cv2.destroyAllWindows()
+product_path = "đường dẫn đến ảnh.jpg hoặc video.mp4"
+get_shopping_list_from_source(product_path)

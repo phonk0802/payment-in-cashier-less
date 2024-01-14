@@ -12,10 +12,10 @@ from customer_recognition import predict_face
 def rename_cus():
     name = st.text_input("Nhập tên của bạn:")
     st.write("Giá trị nhập vào là:", name)
-    path = 'image/img2'
+    path = 'đường dẫn đến thư mục ảnh khách hàng'
     if st.button("đã xong"):
         new_path = path + '/' + str(name) + '.jpg'
-        shutil.move('image/temp_frame.jpg', new_path)
+        shutil.move('temp_frame.jpg', new_path)
 
 
 def main():

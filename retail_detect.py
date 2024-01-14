@@ -8,13 +8,13 @@ from yolov7.models.experimental import attempt_load
 from yolov7.utils.torch_utils import select_device
 from yolov7.detect_and_track import detect_id
 
-weights = 'test_886.pt'
+weights = 'test_886.pt' # Đổi thành file weight yolov7 của bạn
 #device = select_device('cpu')
 #model = attempt_load(weights, map_location=device)  # load FP32 model
 
 nc = 9
 price_dict = dict(poca=10000, custas=12000, milo=8000, omachi=5000, fami=6000, cafe=10000, pen=6000, hao_hao=3000,
-                  bottle=60000)
+                  bottle=60000) # giá tiền tương ứng với mỗi sản phẩm
 
 name_dict = dict(poca='Bim bim Poca/Lays', custas='Hộp bánh Custas (2 cái)', milo='Hộp sữa Milo', omachi='Mì Omachi',
                  fami='Hộp sữa Fami', cafe='Cà phê lon Boss', pen='Bút bi FlexOffice', hao_hao='Mì Hảo Hảo',
@@ -78,15 +78,6 @@ def get_shopping_list_from_source(source):
     mapping = {0: 'poca', 1: 'custas', 2: 'milo', 3: 'omachi', 4: 'fami', 5: 'cafe', 6: 'pen', 7: 'hao_hao',
                8: 'bottle'}
     class_result = {mapping[key]: len(value) for key, value in result.items()}
-    # print(result)
-    # print("Kết quả dự đoán", str(set(class_result.items())))
-    # with open(f'real_test_2_side_2\\{file_name}.txt', 'r') as file_label:
-    #    label = file_label.read()
-    # label = eval(label)
-    # print(type(label))
-    # print("Kết quả thực tế", label)
-    # print(set(class_result.items()) == label)
-
     print("Danh sách hàng hóa đã mua là:")
     product_list = []
     total_price_all_products = 0

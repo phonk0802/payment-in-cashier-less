@@ -9,11 +9,6 @@ import numpy as np
 from deepface import DeepFace
 from Silent_Face_Anti_Spoofing.liveness_predict import test_face
 
-# path to images folder
-resource_dir = 'C:\\Users\\ASUS\\PycharmProjects\\cashier_less_project\\image'
-image_dir = resource_dir + '\\img2'
-video_dir = resource_dir + '\\video2'
-
 file = open('encode_file2.p', 'rb')
 encode_list_known = pickle.load(file)
 file.close()
@@ -63,16 +58,12 @@ def compare_all(encoded_frame, encoded_list, threshold=0.2):
 
 
 def make_result_img(ide):
-    # full_img_cus = np.ones((680, 480, 3), dtype=np.uint8) * 255
     img_cus = img_cus_list[ide]
     if img_cus.shape[0] < 320:
         img_cus = cv2.resize(img_cus, None, fx=2, fy=2)
     elif img_cus.shape[0] > 720:
         img_cus = cv2.resize(img_cus, None, fx=0.5, fy=0.5)
     img_cus = cv2.cvtColor(img_cus, cv2.COLOR_BGR2RGB)
-    # full_img_cus[0:img_cus.shape[0], 29:29 + img_cus.shape[1]] = img_cus
-    # full_img_cus = cv2.cvtColor(full_img_cus, cv2.COLOR_BGR2RGB)
-
     font = cv2.FONT_HERSHEY_SIMPLEX
     font_size = 1
     font_color = (255, 0, 0)
@@ -117,12 +108,12 @@ def predict_face():
         fps_disp = "FPS: " + str(FPS)[:5]
         # img_small = cv2.resize(img, (0, 0), None, 0.25, 0.25)
         img_small = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-        plt.imsave('C:\\Users\\ASUS\\PycharmProjects\\cashier_less_project\\image\\temp_frame.jpg', img_small)
+        plt.imsave('temp_frame.jpg', img_small)
         if success:
             if counter % 30 == 0:
                 try:
                     check_img = cv2.imread(
-                        'C:\\Users\\ASUS\\PycharmProjects\\cashier_less_project\\image\\temp_frame.jpg')
+                        'temp_frame.jpg')
                     label = get_label(check_img)
                     # print(label)
                     if label != 1:
@@ -130,7 +121,7 @@ def predict_face():
                     else:
                         fake_person = False
                         encode_per_frame = DeepFace.represent(
-                            "C:\\Users\\ASUS\\PycharmProjects\\cashier_less_project\\image\\temp_frame.jpg",
+                            "temp_frame.jpg",
                             enforce_detection=True)
                         result = compare_all(encode_per_frame[0]['embedding'], encode_list, 0.39)
                         if result != 'Unknown':
@@ -210,8 +201,4 @@ def predict_face():
         if k == ord('q'):
             cap.release()
             break
-#predict_face()
-    # if new_cus_add:
-    #    new_name = str(input('Enter your name: '))
-    #    os.rename('C:\\Users\\ASUS\\PycharmProjects\\cashier_less_project\\image\\img\\tmp.jpg',
-    #              'C:\\Users\\ASUS\\PycharmProjects\\cashier_less_project\\image\\img\\' + new_name + '.jpg')
+predict_face()

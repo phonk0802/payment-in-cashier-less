@@ -1,5 +1,5 @@
 # payment-in-cashier-less
-Ứng dụng thị giác máy tính để thanh toán tự động trong cửa hàng không người bán
+Ứng dụng thị giác máy tính trong khâu thanh toán của bài toán cửa hàng không người bán. Chúng tôi hướng tới hai tác vụ chính: Tạo hóa đơn tự động và thanh toán bằng khuôn mặt. Mục tiêu của chúng tôi là tạo ra một giải pháp thuần thị giác máy tính cho vấn đề này. 
 # Lên hóa đơn tự động bằng Object Detection và Tracking
 - Đề tài sử dụng [YOLOv7](https://github.com/WongKinYiu/yolov7) và [SORT](https://github.com/abewley/sort).
 - Dữ liệu thực nghiệm là tập 2.301 ảnh bao gồm 9 nhãn tương ứng với các mặt hàng tạp hóa tại Việt Nam.
@@ -8,7 +8,7 @@
 
 # Thanh toán khuôn mặt bằng Face Recognition
 - Đề tài sử dụng OpenCV và VGGFace trong [DeepFace](https://github.com/serengil/deepface) để detect và embedding khuôn mặt.
-- Ngoài ra, chúng tôi sử dụng MINIFasNet để thực hiện liveness detection. Chi tiết đọc thêm [tại đây](https://github.com/minivision-ai/Silent-Face-Anti-Spoofing).
+- Ngoài ra, chúng tôi sử dụng MINIFasNet để thực hiện liveness detection. Chi tiết đọc thêm [tại đây](https://github.com/minivision-ai/Silent-Face-Anti-Spoofing). Chúng tôi tôn trọng quyền tác giả, do mục đích sử dụng nên thư mục Silent-Face-Anti-Spoofing cùng một số hàm và tên file trong repo gốc đã được đổi tên.
 - Để sử dụng, trước tiên chạy file encode_gen.py để tạo file encode_file2.p chứa embedding khuôn mặt của toàn bộ khách hàng.
 - Sau đó, chạy file customer_recogtion.py để nhận diện khuôn mặt thông qua webcam.
 + Đối với khách hàng cũ, kết quả hiện lên là ảnh khách hàng kèm tên.
@@ -17,3 +17,4 @@
 - Tên khách hàng và thời điểm thực hiện nhận diện được lưu lại trong customer_log.
 
 ## Demo bằng streamlit trong file demo.py
+- Web demo được tạo bằng streamlit, toàn bộ quy trình của chúng tôi có thể được mô phỏng bằng việc chạy demo.py
